@@ -4,6 +4,7 @@ class PinsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /pins
   # GET /pins.json
+
   def index
     @pins = Pin.all
   end
@@ -70,7 +71,7 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description)
+      params.require(:pin).permit(:description, :image)
     end
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])

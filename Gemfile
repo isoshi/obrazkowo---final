@@ -15,6 +15,7 @@ group :production do
   
 end
 # Use SCSS for stylesheets
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'devise'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
