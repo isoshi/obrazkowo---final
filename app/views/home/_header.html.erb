@@ -8,15 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Obrazkowo", root_path, class: 'navbar-brand'%>
+      <%= link_to "          Obrazkowo", root_path, class: 'navbar-brand'%>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar">
-          <li><%= link_to 'Strona Główna', root_path %></li>
-          <!-- <li><%= link_to 'O mnie', home_about_path %></li> STRONA O MNIE ! NIEAKTYWNA -->
-          <li> <%= link_to 'Lista pinów', pins_path %></li>
+          <!-- <li><%= link_to 'Strona Główna', root_path %></li> -->
+          <!-- <li><%= link_to 'O stronie', home_about_path %></li> STRONA O MNIE ! NIEAKTYWNA -->
+          <li> <%= link_to 'Lista pinów', pins_path, class: 'btn btn-warning btn-sm' %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>

@@ -1,7 +1,4 @@
-<div class="panel panel-default">
-  <div class="panel-heading"><h2>Zmiana danych</h2></div>
-  <div class="panel-body">
-
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -16,30 +13,27 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(Jesli nie chcesz zmieniać, pozostaw puste)</i><br />
     <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" , class: 'form-control'%>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(Podaj swoje aktualne hasło)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Aktualizuj", class: 'btn btn-info'  %>
+    <%= f.submit "Aktualizuj" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-<div class="actions">
-<p>Unhappy? <%= button_to "Usuń moje konto",  registration_path(resource_name), data: { confirm: "Jesteś pewien, że chcesz usunąć swoje konto?" }, method: :delete, class: 'btn btn-danger' %></p>
- </div>
+<h3>Usuń moje konto!</h3>
 
-</div>
-  <div class="panel-footer"><%= link_to "Back", :back, class: 'btn btn-info btn-xs' %></div>
-</div>
+<p>Niezadowolony? <%= button_to "Usuń moje konto", registration_path(resource_name), data: { confirm: "Czy jestes pewien?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
